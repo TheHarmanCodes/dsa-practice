@@ -10,6 +10,55 @@ Concepts:
 #include <stdlib.h>
 #define max 5
 
+int enqueue(int[], int, int);
+int dequeue(int[], int, int);
+void display(int[], int, int);
+void peek(int[], int);
+
+int main()
+{
+    int queue[max], front, rear, choice;
+    front = rear = -1;
+
+    while (1)
+    {
+        system("cls");
+
+        printf("\n Queue\n------\n1: Insert\n2: Delete\n3: Display\n4: Peek\n5: Exit\nEnter Choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            rear = enqueue(queue, front, rear);
+            if (front == -1)
+                front = 0;
+            break;
+        case 2:
+            front = dequeue(queue, front, rear);
+            if (front == -1)
+                rear = -1;
+            break;
+        case 3:
+            display(queue, front, rear);
+            break;
+        case 4:
+            peek(queue, front);
+            break;
+        case 5:
+            printf("\nExiting...");
+            return 0;
+        default:
+            printf("\nInvalid Choice\tTry Again\n");
+            break;
+        }
+        printf("\nPress Enter to continue...  ");
+        getchar();
+        getchar();
+    }
+    return 0;
+}
+
 int enqueue(int queue[], int front, int rear)
 {
     int x;
@@ -68,48 +117,4 @@ void peek(int queue[], int front)
         printf("\nQueue is empty\n");
     else
         printf("\n%d is at Front.\n", queue[front]);
-}
-
-int main()
-{
-    int queue[max], front, rear, choice;
-    front = rear = -1;
-
-    while (1)
-    {
-        system("cls");
-
-        printf("\n Queue\n------\n1: Insert\n2: Delete\n3: Display\n4: Peek\n5: Exit\nEnter Choice: ");
-        scanf("%d", &choice);
-
-        switch (choice)
-        {
-        case 1:
-            rear = enqueue(queue, front, rear);
-            if (front == -1)
-                front = 0;
-            break;
-        case 2:
-            front = dequeue(queue, front, rear);
-            if (front == -1)
-                rear = -1;
-            break;
-        case 3:
-            display(queue, front, rear);
-            break;
-        case 4:
-            peek(queue, front);
-            break;
-        case 5:
-            printf("\nExiting...");
-            return 0;
-        default:
-            printf("\nInvalid Choice\tTry Again\n");
-            break;
-        }
-        printf("\nPress Enter to continue...  ");
-        getchar();
-        getchar();
-    }
-    return 0;
 }
