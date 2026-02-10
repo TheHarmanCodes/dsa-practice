@@ -32,6 +32,93 @@ typedef struct Node
     struct Node *next;
 } Node;
 
+void insertBeginning(Node **, Node **, int);
+void insertAtEnd(Node **, Node **, int);
+void insertAtPosition(Node **, Node **, int);
+void display(Node *);
+void deleteValue(Node **, Node **, int);
+void reverseDisplay(Node *);
+void reverseList(Node **, Node **);
+void search(Node *);
+
+int main()
+{
+    Node *head = NULL, *rear = NULL;
+    int choice, value, pos;
+
+    while (1)
+    {
+        system("cls");
+
+        printf("\nSingly Linked List\n------------\n1. Insert at Beginning\n2. Insert at End\n3. Insert at Position\n4. Display\n5. Delete by Value\n6. Reverse Display\n7. Reverse List\n8. Search\n9. Exit\nEnter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+            printf("\nEnter value: ");
+            scanf("%d", &value);
+            insertBeginning(&head, &rear, value);
+            break;
+
+        case 2:
+            printf("\nEnter value: ");
+            scanf("%d", &value);
+            insertAtEnd(&head, &rear, value);
+            break;
+
+        case 3:
+            printf("\nEnter position: ");
+            scanf("%d", &pos);
+            insertAtPosition(&head, &rear, pos);
+            break;
+
+        case 4:
+            display(head);
+            break;
+
+        case 5:
+            printf("\nEnter value to delete: ");
+            scanf("%d", &value);
+            deleteValue(&head, &rear, value);
+            break;
+
+        case 6:
+            if (head == NULL)
+            {
+                printf("\nList is empty.");
+            }
+            else
+            {
+
+                printf("\nReverse Display: ");
+                reverseDisplay(head);
+            }
+            printf("\n");
+            break;
+
+        case 7:
+            reverseList(&head, &rear);
+            printf("\nList Reversed\n");
+            break;
+
+        case 8:
+            search(head);
+            break;
+
+        case 9:
+            printf("\nExiting...\n");
+            return 0;
+
+        default:
+            printf("\nInvalid choice\n");
+        }
+
+        printf("\nPress Enter to continue...");
+        getchar();
+        getchar();
+    }
+}
 void insertBeginning(Node **head, Node **rear, int value)
 {
     Node *newNode = (Node *)malloc(sizeof(Node));
@@ -223,83 +310,4 @@ void search(Node *head)
     }
 
     printf("\n%d not found in the list\n", key);
-}
-
-int main()
-{
-    Node *head = NULL, *rear = NULL;
-    int choice, value, pos;
-
-    while (1)
-    {
-        system("cls");
-
-        printf("\nSingly Linked List\n------------\n1. Insert at Beginning\n2. Insert at End\n3. Insert at Position\n4. Display\n5. Delete by Value\n6. Reverse Display\n7. Reverse List\n8. Search\n9. Exit\nEnter choice: ");
-        scanf("%d", &choice);
-
-        switch (choice)
-        {
-        case 1:
-            printf("\nEnter value: ");
-            scanf("%d", &value);
-            insertBeginning(&head, &rear, value);
-            break;
-
-        case 2:
-            printf("\nEnter value: ");
-            scanf("%d", &value);
-            insertAtEnd(&head, &rear, value);
-            break;
-
-        case 3:
-            printf("\nEnter position: ");
-            scanf("%d", &pos);
-            insertAtPosition(&head, &rear, pos);
-            break;
-
-        case 4:
-            display(head);
-            break;
-
-        case 5:
-            printf("\nEnter value to delete: ");
-            scanf("%d", &value);
-            deleteValue(&head, &rear, value);
-            break;
-
-        case 6:
-            if (head == NULL)
-            {
-                printf("\nList is empty.");
-            }
-            else
-            {
-
-                printf("\nReverse Display: ");
-                reverseDisplay(head);
-            }
-            printf("\n");
-            break;
-
-        case 7:
-            reverseList(&head, &rear);
-            printf("\nList Reversed\n");
-            break;
-
-        case 8:
-            search(head);
-            break;
-
-        case 9:
-            printf("\nExiting...\n");
-            return 0;
-
-        default:
-            printf("\nInvalid choice\n");
-        }
-
-        printf("\nPress Enter to continue...");
-        getchar();
-        getchar();
-    }
 }
