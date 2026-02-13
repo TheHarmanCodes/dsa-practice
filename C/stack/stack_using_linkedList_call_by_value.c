@@ -91,10 +91,10 @@ void display(S *top)
         printf("\nStack is empty.\n");
         return;
     }
-    printf("\nStack : ");
+    printf("\nStack : \n");
     while (top != NULL)
     {
-        printf("%d ", top->data);
+        printf("%d\n", top->data);
         top = top->next;
     }
     printf("\n");
