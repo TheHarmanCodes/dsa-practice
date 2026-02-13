@@ -46,7 +46,6 @@ int main()
             return 0;
         default:
             printf("\nInvalid Choice\tTry Again\n");
-            break;
         }
         printf("\nPress Enter to continue...  ");
         getchar();
