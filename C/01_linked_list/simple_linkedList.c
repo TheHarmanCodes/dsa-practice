@@ -1,10 +1,8 @@
 /*
-Program Name : Singly Linked List (Using head and rear)
+Singly Linked List (Using head and rear)
 Description  : Implementation of a Singly Linked List in C
                supporting insertion, deletion, searching,
                reversing, and display operations.
-
-Data Structure Used : Singly Linked List
 
 Pointers Used:
 - head : points to the first node
