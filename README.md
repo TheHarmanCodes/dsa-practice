@@ -4,8 +4,6 @@ This repository contains my implementations of core **Data Structures and Algori
 
 The goal of this repository is to build a strong understanding of fundamental data structures, algorithm logic, and pointer-based implementations.
 
----
-
 ## Topics Covered
 
 ### Stack
@@ -32,6 +30,12 @@ The goal of this repository is to build a strong understanding of fundamental da
 - Operator precedence handling
 - Associativity handling
 
+### Sorting
+
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+
 ---
 
 ## Languages Used
@@ -49,8 +53,6 @@ This repository is maintained to:
 - Strengthen problem-solving skills
 - Build a solid foundation in data structures
 - Track my learning progress
-
----
 
 ## Author
 
