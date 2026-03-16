@@ -56,7 +56,7 @@ int main()
     {
         system("cls");
 
-        printf("\nCircular Linked List\n------------\n1. Insert at Beginning\n2. Insert at End\n3. Insert at Position\n4. Delete from Beginning \n5. Delete from End\n6. Delete from Position\n7. Display List\n8. Reverse Display\n9. Search Element\n10. Count Nodes\n11. Exit\nEnter choice: ");
+        printf("\nCircular Linked List\n------------\n1. Insert at Beginning\n2. Insert at End\n3. Insert at Position\n4. Delete from Beginning \n5. Delete from End\n6. Delete from Position\n7. Display List\n8. Reverse Display\n9. Search Element\n10. Count Nodes\n11. Reverse List\n12. Exit\nEnter choice: ");
         scanf("%d", &choice);
 
         switch (choice)
@@ -119,6 +119,10 @@ int main()
             break;
 
         case 11:
+            reverseList(&head, &rear);
+            break;
+
+        case 12:
             printf("\nExiting...\n");
             return 0;
 
