@@ -18,6 +18,14 @@ void quickSort(int[], int, int);
 int partition(int[], int, int);
 void swap(int[], int, int);
 
+/**
+ * Read an integer array from standard input, sort it using quickSort, and print the sorted array.
+ *
+ * The function prompts for the array size and elements, calls quickSort(A, 0, N - 1), and writes the sorted
+ * elements to standard output.
+ *
+ * @return 0 to indicate successful program termination.
+ */
 int main()
 {
     int A[MAX], i = 0, N = 0;
@@ -28,7 +36,7 @@ int main()
     for (i = 0; i < N; i++)
         scanf("%d", &A[i]);
 
-    quickSort(A, 0, N - 1);
+    quickSort(A, 0, N - 1); //(array, lowerbound, upperbound)
 
     printf("Sorted Array:\n");
     for (i = 0; i < N; i++)
@@ -48,22 +56,35 @@ void quickSort(int arr[], int lb, int ub)
     }
 }
 
+/**
+ * Partition the subarray arr[lb..ub] around the pivot at arr[lb].
+ *
+ * Rearranges elements so that every element at an index less than the returned
+ * index is less than or equal to the pivot, and every element at an index
+ * greater than the returned index is greater than the pivot. The pivot value
+ * is taken from arr[lb] and placed at its final sorted position.
+ *
+ * @param arr Array containing the subarray to partition.
+ * @param lb Lower bound index of the subarray (inclusive).
+ * @param ub Upper bound index of the subarray (inclusive).
+ * @returns The final index of the pivot after partitioning.
+ */
 int partition(int arr[], int lb, int ub)
 {
     int pivot = arr[lb], start = lb, end = ub;
 
     while (start < end)
     {
-        while (start <= ub && arr[start] <= pivot)
+        while (start <= ub && arr[start] <= pivot) // stop when greater element found left to right
             start++;
 
-        while (arr[end] > pivot)
+        while (arr[end] > pivot) // stop when smaller element is found from right to left
             end--;
 
         if (start < end)
             swap(arr, start, end);
     }
-    swap(arr, lb, end);
+    swap(arr, lb, end); // now we got a correct position for pivot element
     return end;
 }
 
