@@ -10,13 +10,6 @@ Space Complexity: O(1) (In-place sorting algorithm)
 package javaPrograms.sorting;
 
 public class SelectionSort {
-    /**
-     * Sorts the given integer array in ascending order using selection sort.
-     *
-     * The array is modified in place; no value is returned.
-     *
-     * @param arr the array whose elements will be reordered into ascending order
-     */
     public static void selectionSort(int[] arr) {
         int size = arr.length, min, temp;
         for (int i = 0; i < size - 1; i++) {

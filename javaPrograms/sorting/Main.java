@@ -3,22 +3,6 @@ package javaPrograms.sorting;
 import java.util.Scanner;
 
 public class Main {
-    /**
-     * Runs an interactive console program that reads an integer array from standard input,
-     * prompts the user to choose a sorting algorithm, applies the chosen algorithm to sort
-     * the array in-place, and prints the sorted array.
-     *
-     * <p>Available choices:
-     * <ul>
-     *   <li>1 — Bubble Sort</li>
-     *   <li>2 — Selection Sort</li>
-     *   <li>3 — Insertion Sort</li>
-     *   <li>4 — Quick Sort</li>
-     *   <li>5 — Merge Sort</li>
-     * </ul>
-     *
-     * @param args command-line arguments (not used)
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

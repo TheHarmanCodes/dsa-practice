@@ -15,15 +15,6 @@ Space Complexity: O(log n) average, O(n) worst case -- due to Recursion Stack
 package javaPrograms.sorting;
 
 public class QuickSort {
-    /**
-     * Sorts the elements of the given array between the indices {@code lb} and {@code ub} (inclusive) in ascending order using an in-place Quick Sort.
-     *
-     * The method modifies {@code arr} directly. If {@code lb >= ub} the range is already sorted and the method returns immediately.
-     *
-     * @param arr the array to sort; must not be {@code null}
-     * @param lb  the lower bound index of the range to sort (inclusive)
-     * @param ub  the upper bound index of the range to sort (inclusive)
-     */
     public static void quickSort(int[] arr, int lb, int ub) {
         int loc;
         if (lb < ub) {
