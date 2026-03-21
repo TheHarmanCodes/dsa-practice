@@ -28,7 +28,7 @@ int main()
     for (i = 0; i < N; i++)
         scanf("%d", &A[i]);
 
-    quickSort(A, 0, N - 1);
+    quickSort(A, 0, N - 1); //(array, lowerbound, upperbound)
 
     printf("Sorted Array:\n");
     for (i = 0; i < N; i++)
@@ -54,16 +54,16 @@ int partition(int arr[], int lb, int ub)
 
     while (start < end)
     {
-        while (start <= ub && arr[start] <= pivot)
+        while (start <= ub && arr[start] <= pivot) // stop when greater element found left to right
             start++;
 
-        while (arr[end] > pivot)
+        while (arr[end] > pivot) // stop when smaller element is found from right to left
             end--;
 
         if (start < end)
             swap(arr, start, end);
     }
-    swap(arr, lb, end);
+    swap(arr, lb, end); // now we got a correct position for pivot element
     return end;
 }
 
