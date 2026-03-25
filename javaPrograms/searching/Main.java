@@ -9,6 +9,11 @@ public class Main {
 
         System.out.print("Enter Array Size: ");
         int size = sc.nextInt();
+        if (size <= 0) {
+            System.out.println("Invalid size. Must be greater than 0");
+            sc.close();
+            return;
+        }
 
         int arr[] = new int[size];
 

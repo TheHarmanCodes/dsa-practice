@@ -35,6 +35,9 @@ int main()
         mergeSort(A, 0, n - 1);
         pos = binarySearch(A, n, key);
         break;
+    default:
+        printf("Invalid choice!");
+        return 1;
     }
     if (pos == -1)
         printf("%d is not found", key);
