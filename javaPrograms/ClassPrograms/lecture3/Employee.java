@@ -1,5 +1,9 @@
 package lecture3;
 
+/**
+ * static members 
+ * introduction to getters and setters
+ */
 import java.util.Scanner;
 
 public class Employee {
