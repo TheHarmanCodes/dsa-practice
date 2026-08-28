@@ -7,28 +7,6 @@
 
 // Space Complexity: O(1) (In-place sorting algorithm)
 
-#include <stdio.h>
-#define MAX 50
-
-void insertionSort(int[], int);
-int main()
-{
-    int A[MAX], i = 0, N = 0;
-    printf("Enter Size of Array: ");
-    scanf("%d", &N);
-
-    printf("Enter Array Elements: ");
-    for (i = 0; i < N; i++)
-        scanf("%d", &A[i]);
-
-    insertionSort(A, N);
-
-    printf("Sorted Array:\n");
-    for (i = 0; i < N; i++)
-        printf("%d ", A[i]);
-    return 0;
-}
-
 void insertionSort(int arr[], int n)
 {
     int temp = 0, j = 0;

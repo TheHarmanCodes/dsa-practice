@@ -9,29 +9,10 @@
 
 // Space Complexity: O(n)
 
-#include <stdio.h>
 #define MAX 50
 
-void mergeSort(int[], int, int);
-void merge(int[], int, int, int);
-int main()
-{
-    int A[MAX], i = 0, N = 0;
-    printf("Enter Size of Array: ");
-    scanf("%d", &N);
-
-    printf("Enter Array Elements: ");
-    for (i = 0; i < N; i++)
-        scanf("%d", &A[i]);
-
-    // lowerbound = 0, upperbound = lastIndex
-    mergeSort(A, 0, N - 1);
-
-    printf("Sorted Array:\n");
-    for (i = 0; i < N; i++)
-        printf("%d ", A[i]);
-    return 0;
-}
+void mergeSort(int arr[], int lb, int ub);
+void merge(int arr[], int lb, int mid, int ub);
 
 void mergeSort(int arr[], int lb, int ub)
 {

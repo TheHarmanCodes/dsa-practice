@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "linearSearch.c"
 #include "binarySearch.c"
-#include "../05_Sorting/05_Merge_Sort.c"
+#include "../05_Sorting/04_Quick_Sort.c"
 #define MAX 50
 
 int main()
@@ -32,8 +32,9 @@ int main()
         pos = linearSearch(A, n, key);
         break;
     case 2:
-        mergeSort(A, 0, n - 1);
+        quickSort(A, 0, n - 1);
         pos = binarySearch(A, n, key);
+        // pos = binarySearchRec(A, key, 0, n - 1);
         break;
     default:
         printf("Invalid choice!");

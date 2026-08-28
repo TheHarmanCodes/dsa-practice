@@ -11,31 +11,9 @@
 // Average Case: O(log n)
 // Worst Case:   O(n)
 
-#include <stdio.h>
-#define MAX 50
-
-void quickSort(int[], int, int);
-int partition(int[], int, int);
-void swap(int[], int, int);
-
-int main()
-{
-    int A[MAX], i = 0, N = 0;
-    printf("Enter Size of Array: ");
-    scanf("%d", &N);
-
-    printf("Enter Array Elements: ");
-    for (i = 0; i < N; i++)
-        scanf("%d", &A[i]);
-
-    quickSort(A, 0, N - 1); //(array, lowerbound, upperbound)
-
-    printf("Sorted Array:\n");
-    for (i = 0; i < N; i++)
-        printf("%d ", A[i]);
-
-    return 0;
-}
+void quickSort(int arr[], int lb, int ub);
+int partition(int arr[], int lb, int ub);
+void swap(int arr[], int x, int y);
 
 void quickSort(int arr[], int lb, int ub)
 {
